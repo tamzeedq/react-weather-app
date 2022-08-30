@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import WeatherCards from "./components/WeatherCards";
+import { useState } from 'react'
 
 function App() {
+  const [showAddSearch, setShowAddSearch] = useState(false)
+  const [cities, setCities] = useState([
+    { location: 'Vancouver',
+      temperature: '25C',
+      description: 'Sunny'},
+    { location: 'Surrey',
+      temperature: '20C',
+      description: 'Sun & Clouds'},
+    { location: 'Victoria',
+      temperature: '18C',
+      description: 'Cloudy'}
+  ]) 
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Header/>
+      <WeatherCards cities={cities}/>
     </div>
   );
 }

@@ -1,13 +1,15 @@
-import React from 'react'
+import WeatherCardSimple from './WeatherCardSimple'
+import WeatherCardExtra from './WeatherCardExtra'
+import { useState } from 'react'
 
 const WeatherCard = ({city}) => {
+  const [showSimple, setShowSimple] = useState(true)
   return (
     <div className='card'>
-        <h3>{city.name}, {city.sys.country}</h3>
-        <img src={`http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`}></img>
-        <h5>{city.main.temp}°C</h5>
-        <h5>{city.weather[0].description}</h5>
-        <button className='btn'>View more</button>
+        {showSimple ?
+        <WeatherCardSimple city={city}/> :
+        <WeatherCardExtra/>}
+        <button className='btn' onClick={() => setShowSimple(!showSimple)}>View more</button>
     </div>
   )
 }

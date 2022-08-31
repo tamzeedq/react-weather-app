@@ -1,4 +1,4 @@
-import WeatherCards from "./components/WeatherCards";
+import WeatherCardsContainer from "./components/WeatherCardsContainer";
 import { useState } from 'react'
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         <input type='text' placeholder='Search City' value={searchCity} 
         onChange={(e) => setSearchCity(e.target.value)} onKeyPress={search}></input>
       </div>
-      <WeatherCards cities={cities}/>
+      <WeatherCardsContainer cities={cities}/>
     </div>
   );
 }

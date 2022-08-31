@@ -1,4 +1,3 @@
-import Header from "./components/Header";
 import WeatherCards from "./components/WeatherCards";
 import { useState } from 'react'
 
@@ -6,7 +5,6 @@ function App() {
   const key = 'dd99753319442fd41dc9129e472d226f'
   //const url = `https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=${key}&units=metric`
 
-  const [showAddSearch, setShowAddSearch] = useState(false)
   const [searchCity, setSearchCity] = useState('')
   const [cities, setCities] = useState([]) 
   
@@ -23,12 +21,10 @@ function App() {
 
   return (
     <div>
-      {/* <Header setCities={setCities}/> */}
       <div className='header'>
         <h1>Quazi Forecast</h1>
         <input type='text' placeholder='Search City' value={searchCity} 
         onChange={(e) => setSearchCity(e.target.value)} onKeyPress={search}></input>
-      {/* <AddCity /> */}
       </div>
       <WeatherCards cities={cities}/>
     </div>

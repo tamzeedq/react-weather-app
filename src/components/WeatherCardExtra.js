@@ -2,7 +2,9 @@
 
 const WeatherCardExtra = () => {
   return (
-    <div>WeatherCardExtra</div>
+    <div className='extra'>
+      WeatherCardExtra
+    </div>
   )
 }
 

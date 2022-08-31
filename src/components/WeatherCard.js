@@ -3,7 +3,10 @@ import WeatherCardExtra from './WeatherCardExtra'
 import { useState } from 'react'
 
 const WeatherCard = ({city}) => {
-  const [showSimple, setShowSimple] = useState(true)
+  
+  //Boolean to pick which type of card to show
+  const [showSimple, setShowSimple] = useState(true)  
+
   return (
     <div className='card'>
         {showSimple ?

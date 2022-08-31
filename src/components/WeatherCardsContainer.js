@@ -1,11 +1,12 @@
 import WeatherCard from "./WeatherCard"
 
-const WeatherCards = ({ cities }) => {
+// Contain all weather cards
+const WeatherCardsContainer = ({ cities }) => {
   return (
     <div className='container'>
-        {cities.map((city) => (<WeatherCard city={city}/>))}
+        {cities.map((city) => (<WeatherCard city={city}/>))} 
     </div>
   )
 }
 
-export default WeatherCards
+export default WeatherCardsContainer
